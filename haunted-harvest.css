@@ -1,19 +1,8 @@
-/* Halloween Color Palette & Variables */
+/* Halloween Color Palette */
 :root {
   --pumpkin: #ff7518;
-  --candy-purple: #5a189a;
   --spider-black: #1a1423;
-  --slime-green: #8ac926;
   --ghost-white: #f6f2f8;
-  --candle-glow: #ffd60a;
-}
-
-/* Reduced Motion Preferences */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
 }
 
 body {
@@ -23,132 +12,85 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* CSS-only scene switching */
-.scene { 
-  display: none; 
-}
+/* Scene switching */
+.scene { display: none; }
+.scene:target, #ride { display: block; }
 
-.scenes:not(:has(.scene:target)) .scene:first-child { 
-  display: block; 
-}
-
-.scene:target { 
-  display: block; 
-}
-
-/* Main Animation Stage Container */
+/* Stage */
 .animation-stage {
   position: relative;
-  width: 100%;
-  max-width: 1000px;
+  width: 1000px;
   height: 500px;
-  margin: 40px auto;
+  margin: 20px auto;
   overflow: hidden;
-  border: 3px solid var(--candy-purple);
-  border-radius: 8px;
-  background-color: #120d1a;
+  background: #120d1a;
 }
 
-/* Base positioning for all layers inside the stage */
+/* Base image styling inside stage */
 .animation-stage div {
   position: absolute;
 }
 
-/* Background Image Layer (Back) */
-.animation-stage .background {
-  top: 0;
-  left: 0;
+/* Background */
+.background {
   width: 100%;
   height: 100%;
   z-index: 1;
 }
-
-.animation-stage .background img {
+.background img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
-/* Scattered Element Layers & Positioning */
-.animation-stage .clouds {
-  top: 30px;
+/* Clouds */
+.clouds {
+  top: 20px;
   left: 0;
   width: 100%;
-  height: 120px;
   z-index: 2;
   animation: drift 25s linear infinite;
 }
+.clouds img { width: 300px; }
 
-.animation-stage .clouds img {
-  width: 300px;
-  height: auto;
-  opacity: 0.8;
-}
-
-.animation-stage .trees {
+/* Trees */
+.trees {
   bottom: 0;
-  left: 50px;
+  left: 40px;
   width: 250px;
   z-index: 3;
-  pointer-events: none;
 }
+.trees img { width: 100%; }
 
-.animation-stage .trees img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.animation-stage .owls {
-  top: 100px;
-  left: 700px;
+/* Owls */
+.owls {
+  top: 90px;
+  left: 650px;
   z-index: 4;
   animation: flying 4s ease-in-out infinite;
 }
+.owls img { width: 70px; }
 
-.animation-stage .owls img {
-  width: 70px;
-  height: auto;
-}
-
-.animation-stage .witch-container {
-  top: 180px;
+/* Witch (Moves Left to Right) */
+.witch-container {
+  top: 150px;
   left: -150px;
   z-index: 5;
   animation: magicbroom 10s linear infinite;
 }
+.witch-container img { height: 90px; }
 
-.animation-stage .witch-container img {
-  height: 90px;
-  width: auto;
-}
-
-.animation-stage .hay-wagon {
+/* Hay Wagon */
+.hay-wagon {
   bottom: 10px;
-  left: 400px;
+  left: 380px;
   z-index: 3;
 }
+.hay-wagon img { width: 140px; }
 
-.animation-stage .hay-wagon img {
-  width: 140px;
-  height: auto;
-}
-
-/* Glowing jack-o'-lantern flicker */
-@keyframes flicker {
-  0%, 100% { opacity: 1; filter: drop-shadow(0 0 12px var(--pumpkin)); }
-  50%      { opacity: 0.75; }
-}
-
-.pumpkin-glow {
-  animation: flicker 2.5s ease-in-out infinite;
-}
-
-/* Keyframe Animations */
+/* Animations */
 @keyframes flying {
-  0% { transform: translateY(0); }
+  0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
 }
 
 @keyframes magicbroom {
