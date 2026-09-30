@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Broomstick Ride | The Haunted Harvest</title>
+    <link rel="stylesheet" href="haunted-harvest.css">
+</head>
+<body>
+
+    <!-- Header Navigation (Flexbox layout) -->
+    <header class="site-header">
+        <h1>Midnight Broomstick Ride</h1>
+        <nav class="scene-nav">
+            <a href="#intro">Intro</a>
+            <a href="#ride">The Ride</a>
+            <a href="#credits">Credits</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Container with CSS-only :target switching -->
+    <main class="scenes">
+        
+        <!-- Scene 1: Intro -->
+        <section id="intro" class="scene">
+            <div class="content-box">
+                <h2>Welcome to the Haunted House!</h2>
+                <p>This is a very scary place!</p>
+                <a href="#ride" class="btn">Start Ride 🧹</a>
+            </div>
+        </section>
+
+        <!-- Scene 2: Option 5 Animation Stage (CSS Grid layout) -->
+        <section id="ride" class="scene">
+            <div class="animation-stage">
+                <!-- Moving background, animals, and characters -->
+                <div class="clouds"></div>
+                <div class="trees"></div>
+                <div class="owls">🦉</div>
+                <div class="witch-container">
+                    <div class="witch">🧙‍♀️</div>
+                    <div class="sparks">✨</div>
+                </div>
+                <div class="hay-wagon">🛒</div>
+            </div>
+            <div class="scene-controls">
+                <a href="#intro">← Back</a>
+                <a href="#credits">Next →</a>
+            </div>
+        </section>
+
+
+    </main>
+
+</body>
+</html>
