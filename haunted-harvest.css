@@ -159,6 +159,16 @@ body {
   75% {transform: rotate(-30deg);}
 }
 
+@keyframes hello {
+  0% {transform: rotate(-45deg);}
+
+  25% {transform: rotate(-30deg);}
+
+  50% {transform: rotate(-60deg);}
+
+  75% {transform: rotate(-30deg);}
+}
+
 @keyframes drift {
   from { transform: translateX(-10%); }
   to { transform: translateX(100%); }
