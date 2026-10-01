@@ -26,7 +26,7 @@ body {
   background: #120d1a;
 }
 
-/* Base image styling inside stage */
+/* Base image styling*/
 .animation-stage div {
   position: absolute;
 }
@@ -70,14 +70,20 @@ body {
 }
 .owls img { width: 70px; }
 
-/* Witch (Moves Left to Right) */
+/* Witch  */
 .witch-container {
   top: 150px;
-  left: -150px;
+  left: 1100px;
   z-index: 5;
   animation: magicbroom 10s linear infinite;
+  display: flex;
+  align-items: center;
 }
 .witch-container img { height: 90px; }
+
+.witch-container .sparks {
+  animation: blink 0.5s infinite;
+}
 
 /* Hay Wagon */
 .hay-wagon {
@@ -95,10 +101,15 @@ body {
 
 @keyframes magicbroom {
   0% { transform: translateX(0); }
-  100% { transform: translateX(1200px); }
+  100% { transform: translateX(-1200px); }
 }
 
 @keyframes drift {
   from { transform: translateX(-10%); }
   to { transform: translateX(100%); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
