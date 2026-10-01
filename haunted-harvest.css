@@ -86,7 +86,7 @@ body {
 }
 
 .animation-stage .trees {
-  bottom: 0;
+  bottom: -25px;
   left: 50px;
   width: 250px;
   z-index: 3;
@@ -94,11 +94,12 @@ body {
 }
 
 .animation-stage .trees img {
-  width: 100%;
+  width: 150%;
   height: auto;
   display: block;
 }
 
+/* Owl flying in the air*/
 .animation-stage .owls {
   top: 100px;
   left: 700px;
@@ -124,7 +125,7 @@ body {
 }
 
 .animation-stage .hay-wagon {
-  bottom: 10px;
+  bottom: -40px;
   left: 400px;
   z-index: 3;
 }
@@ -132,6 +133,30 @@ body {
 .animation-stage .hay-wagon img {
   width: 140px;
   height: auto;
+}
+
+.skeleton-couple {
+  bottom: 33px;
+  left: 395px;
+  z-index: 2;
+}
+
+.skeleton-couple img {
+  width: 140px;
+  height: auto;
+}
+
+.animation-stage .waving {
+  transform: rotate(-45deg);
+  bottom: 30px;
+  left: 345px;
+  z-index: 2;
+  animation: hello 6s ease-in-out infinite;
+}
+
+.waving img{
+    width: 100px;
+   height: auto;
 }
 
 /* Glowing jack-o'-lantern flicker */
@@ -154,6 +179,16 @@ body {
 @keyframes magicbroom {
   0% { transform: translateX(0); }
   100% { transform: translateX(1200px); }
+}
+
+@keyframes hello {
+  0% {transform: rotate(-45deg);}
+
+  25% {transform: rotate(-30deg);}
+
+  50% {transform: rotate(-60deg);}
+
+  75% {transform: rotate(-30deg);}
 }
 
 @keyframes drift {
