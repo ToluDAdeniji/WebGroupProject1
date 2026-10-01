@@ -50,21 +50,29 @@ body {
   z-index: 2;
   animation: drift 25s linear infinite;
 }
-.clouds img { width: 300px; }
+.animation-stage .clouds img {
+  width: 300px;
+  height: auto;
+  opacity: 0.8;
+}
 
 /* Trees */
-.trees {
-  bottom: 0;
-  left: 40px;
+.animation-stage .trees {
+  bottom: -25px;
+  left: 50px;
   width: 250px;
   z-index: 3;
 }
-.trees img { width: 100%; }
+.animation-stage .trees img {
+  width: 150%;
+  height: auto;
+  display: block;
+}
 
-/* Owls */
-.owls {
-  top: 90px;
-  left: 650px;
+/* Owl flying in the air*/
+.animation-stage .owls {
+  top: 100px;
+  left: 700px;
   z-index: 4;
   animation: flying 4s ease-in-out infinite;
 }
@@ -79,21 +87,61 @@ body {
   display: flex;
   align-items: center;
 }
-.witch-container img { height: 90px; }
+.animation-stage .witch-container img {
+  height: 90px;
+  width: auto;
+}
 
 .witch-container .sparks {
   animation: blink 0.5s infinite;
 }
 
 /* Hay Wagon */
-.hay-wagon {
-  bottom: 10px;
-  left: 380px;
+.animation-stage .hay-wagon {
+  bottom: -40px;
+  left: 400px;
   z-index: 3;
 }
-.hay-wagon img { width: 140px; }
+.animation-stage .hay-wagon img {
+  width: 140px;
+  height: auto;
+}
 
-/* Animations */
+.skeleton-couple {
+  bottom: 33px;
+  left: 395px;
+  z-index: 2;
+}
+
+.skeleton-couple img {
+  width: 140px;
+  height: auto;
+}
+
+.animation-stage .waving {
+  transform: rotate(-45deg);
+  bottom: 30px;
+  left: 345px;
+  z-index: 2;
+  animation: hello 6s ease-in-out infinite;
+}
+
+.waving img{
+    width: 100px;
+   height: auto;
+}
+
+/* Glowing jack-o'-lantern flicker */
+@keyframes flicker {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 12px var(--pumpkin)); }
+  50%      { opacity: 0.75; }
+}
+
+.pumpkin-glow {
+  animation: flicker 2.5s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
 @keyframes flying {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
@@ -102,6 +150,13 @@ body {
 @keyframes magicbroom {
   0% { transform: translateX(0); }
   100% { transform: translateX(-1200px); }
+}
+
+@keyframes hello {
+  0% {transform: rotate(-45deg);}
+  25% {transform: rotate(-30deg);}
+  50% {transform: rotate(-60deg);}
+  75% {transform: rotate(-30deg);}
 }
 
 @keyframes drift {
